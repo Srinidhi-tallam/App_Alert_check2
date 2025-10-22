@@ -1,0 +1,34 @@
+<h2>Patient Details</h2>
+
+<div *ngIf="patient">
+  <p><strong>Name:</strong> {{ patient.name }}</p>
+  <p><strong>Age:</strong> {{ patient.age }} years</p>
+</div>
+
+<div *ngIf="patientError" class="error">{{ patientError }}</div>
+
+<h3>Alarms</h3>
+
+<div *ngIf="loadingAlarms">Loading alarms...</div>
+<div *ngIf="alarmsError" class="error">{{ alarmsError }}</div>
+
+<table *ngIf="alarms.length > 0" border="1" cellpadding="5">
+  <thead>
+    <tr>
+      <th>Alarm</th>
+      <th>Severity</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let alarm of alarms">
+      <td>{{ alarm.name }}</td>
+      <td>{{ alarm.severity }}</td>
+      <td>{{ alarm.timestamp || '-' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!loadingAlarms && alarms.length === 0 && !alarmsError">
+  No alarms found for this patient.
+</div>

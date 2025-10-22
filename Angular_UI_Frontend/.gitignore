@@ -1,0 +1,65 @@
+# ---------------------------------------------------------
+# 🔹 Build / Compiled output
+# ---------------------------------------------------------
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# ---------------------------------------------------------
+# 🔹 Node modules and logs
+# ---------------------------------------------------------
+/node_modules
+npm-debug.log*
+yarn-error.log*
+
+# ---------------------------------------------------------
+# 🔹 IDEs and Editors
+# ---------------------------------------------------------
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# ---------------------------------------------------------
+# 🔹 Visual Studio Code (keep useful config files)
+# ---------------------------------------------------------
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ---------------------------------------------------------
+# 🔹 Visual Studio temporary files (ignore everywhere)
+# ---------------------------------------------------------
+# Ignore all Visual Studio folders everywhere
+**/.vs/
+.vs/
+
+
+# ---------------------------------------------------------
+# 🔹 Editor history and cache
+# ---------------------------------------------------------
+.history/
+.angular/cache/
+.sass-cache/
+
+# ---------------------------------------------------------
+# 🔹 Miscellaneous
+# ---------------------------------------------------------
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+__screenshots__/
+
+# ---------------------------------------------------------
+# 🔹 System files
+# ---------------------------------------------------------
+.DS_Store
+Thumbs.db

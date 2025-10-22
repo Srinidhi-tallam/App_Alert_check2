@@ -1,0 +1,10 @@
+.alarm-detail {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  max-width: 500px;
+}
+
+  .alarm-detail p {
+    margin: 5px 0;
+  }

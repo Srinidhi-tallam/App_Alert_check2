@@ -1,0 +1,15 @@
+<h2>Update Patient Status</h2>
+
+<label>
+  <input type="checkbox" [(ngModel)]="status.isWalkingAlone">
+  Walking Alone
+</label>
+
+<label>
+  <input type="checkbox" [(ngModel)]="status.isFalling">
+  Falling
+</label>
+
+<button (click)="saveStatus()">Save</button>
+
+<p>Status Object: {{ status | json }}</p>

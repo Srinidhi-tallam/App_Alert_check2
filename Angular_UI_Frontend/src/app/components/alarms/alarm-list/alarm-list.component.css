@@ -1,0 +1,25 @@
+.alarm-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+  .alarm-table th,
+  .alarm-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  .alarm-table th {
+    background-color: #f2f2f2;
+  }
+
+button {
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}

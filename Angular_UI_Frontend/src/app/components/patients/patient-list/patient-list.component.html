@@ -1,0 +1,53 @@
+<h2>Patients</h2>
+
+<!-- Error message -->
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+<!-- List of patients -->
+<ul *ngIf="patients.length > 0">
+  <li *ngFor="let patient of patients" style="margin-bottom: 15px;">
+    <strong>{{ patient.name }}</strong> | {{ patient.age }} years
+
+    <!-- Status update form -->
+    <form (ngSubmit)="updateStatus(patient.id || '')" style="margin-top:5px;">
+      <label>
+        Falling:
+        <input type="checkbox" [(ngModel)]="patientStatus[patient.id || ''].isFalling"
+               name="falling-{{patient.id}}" />
+      </label>
+      <label>
+        Walking Alone:
+        <input type="checkbox" [(ngModel)]="patientStatus[patient.id || ''].isWalkingAlone"
+               name="walking-{{patient.id}}" />
+      </label>
+      <button type="submit">Update Status</button>
+    </form>
+
+    <!-- Alarms -->
+    <ul *ngIf="(patientAlarms[patient.id || ''] ?? []).length > 0">
+      <li *ngFor="let alarm of patientAlarms[patient.id || '']">
+        <strong>{{ alarm.message }}</strong> |
+        {{ alarm.severity }} |
+        {{ alarm.createdAt ? (alarm.createdAt | date:'short') : '-' }}
+        <span *ngIf="alarm.location">
+          | Location: {{ alarm.location.name || 'N/A' }}
+        </span>
+      </li>
+    </ul>
+    <div *ngIf="(patientAlarms[patient.id || ''] ?? []).length === 0">No alarms</div>
+  </li>
+</ul>
+
+<!-- Add new patient form (outside the list) -->
+<h3>Add Patient</h3>
+<form (ngSubmit)="createPatient()" style="margin-top: 10px;">
+  <label>
+    Name:
+    <input type="text" [(ngModel)]="newPatient.name" name="name" required />
+  </label>
+  <label>
+    Age:
+    <input type="number" [(ngModel)]="newPatient.age" name="age" required />
+  </label>
+  <button type="submit">Add Patient</button>
+</form>

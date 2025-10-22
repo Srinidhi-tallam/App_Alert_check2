@@ -1,0 +1,30 @@
+<h3>Alarm List</h3>
+
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+<table *ngIf="alarms.length > 0" border="1" cellpadding="5">
+  <thead>
+    <tr>
+      <th>Patient</th>
+      <th>Message</th>
+      <th>Time</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let alarm of alarms">
+      <td>{{ alarm.patientName || '-' }}</td>
+      <td>{{ alarm.message || alarm.name }}</td>
+      <td>{{ alarm.createdAt || '-' }}</td>
+      <td>
+        <button (click)="acknowledge(alarm.id)" [disabled]="alarm.isAcknowledged">
+          {{ alarm.isAcknowledged ? 'Acknowledged' : 'Acknowledge' }}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="alarms.length === 0 && !errorMessage">
+  No alarms found.
+</div>

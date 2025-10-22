@@ -1,0 +1,9 @@
+<div *ngIf="alarm" class="alarm-detail">
+  <h2>Alarm Details</h2>
+  <p><strong>Patient:</strong> {{ alarm.patientName }}</p>
+  <p><strong>Message:</strong> {{ alarm.message }}</p>
+  <p><strong>Severity:</strong> {{ alarm.severity }}</p>
+  <p><strong>Time:</strong> {{ alarm.createdAt | date:'short' }}</p>
+  <p><strong>Acknowledged:</strong> {{ alarm.isAcknowledged ? 'Yes' : 'No' }}</p>
+</div>
+<div *ngIf="!alarm">No alarm selected.</div>
