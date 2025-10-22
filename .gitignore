@@ -1,0 +1,37 @@
+# Ignore Visual Studio folders
+.vs/
+**/.vs/
+
+# Ignore build and output folders
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Ignore node modules
+node_modules/
+**/node_modules/
+
+# Ignore environment and cache files
+.angular/cache/
+.sass-cache/
+dist/
+tmp/
+out-tsc/
+bazel-out/
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+
+# IDE settings (keep VS Code config if needed)
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# System files
+.DS_Store
+Thumbs.db
