@@ -29,11 +29,9 @@
     "strictInputAccessModifiers": true,
     "enableI18nLegacyMessageIdFormat": false
   },
-  "include": [ "src/**/*.ts" ],
   "exclude": [ "node_modules", "dist" ],
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.spec.json" }
   ]
 }
-
